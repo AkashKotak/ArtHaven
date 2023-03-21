@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ARTHAVEN</string>
+    <string name="app_logo" />
+    <string name="email" />
+    <string name="password" />
+    <string name="login" />
+    <string name="email_hint" />
+    <string name="password_description" />
+    <string name="login_button_description" />
+    <string name="logo_desc" />
+    <string name="email_edittext_description" />
+</resources>

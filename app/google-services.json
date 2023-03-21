@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "10310644185",
+    "project_id": "arthaven-3fdb9",
+    "storage_bucket": "arthaven-3fdb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10310644185:android:80e87269b29c480a1269c8",
+        "android_client_info": {
+          "package_name": "com.example.arthaven"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "10310644185-6hdme6aq6himealn731j5ks76mm3nvcc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA86C5a_TiylO5H9u-QBIFGBhIndxxP230"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "10310644185-6hdme6aq6himealn731j5ks76mm3nvcc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

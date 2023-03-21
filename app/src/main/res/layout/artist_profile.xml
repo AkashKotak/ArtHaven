@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    >
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/profileImageView"
+            android:layout_width="75dp"
+            android:layout_height="77dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/artist_profile_copy"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amit Samant"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@+id/profileImageView"
+            android:layout_centerVertical="true"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+    <!-- Artwork images -->
+    <TextView
+        android:id="@+id/artworkTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Artwork"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <!-- Artwork Grid -->
+    <GridView
+        android:id="@+id/artworkGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="3"
+        android:horizontalSpacing="8dp"
+        android:verticalSpacing="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@id/artistDescription"
+        tools:ignore="UnknownId" />
+
+    <!-- Artwork Images -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/portfolio_4"
+            android:layout_gravity="center"
+            tools:ignore="ContentDescription" />
+
+
+    <!-- Footer -->
+    <LinearLayout
+        android:id="@+id/footerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@color/light_grey">
+
+        <ImageView
+            android:id="@+id/instagramIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/instagram"
+            android:layout_gravity="center_vertical"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/twitterIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/twitter"
+            android:layout_marginStart="16dp"
+            android:layout_gravity="center_vertical"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/facebookIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/facebook"
+            android:layout_marginStart="16dp"
+            android:layout_gravity="center_vertical"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+</RelativeLayout>
