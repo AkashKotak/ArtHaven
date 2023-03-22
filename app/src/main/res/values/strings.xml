@@ -9,4 +9,5 @@
     <string name="login_button_description" />
     <string name="logo_desc" />
     <string name="email_edittext_description" />
+    <string name="google_api_client_id">10310644185-6hdme6aq6himealn731j5ks76mm3nvcc.apps.googleusercontent.com</string>
 </resources>
