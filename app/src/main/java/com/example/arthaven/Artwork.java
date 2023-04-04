@@ -11,4 +11,5 @@ public class Artwork {
     public int getImageResource() {
         return mImageResource;
     }
+
 }

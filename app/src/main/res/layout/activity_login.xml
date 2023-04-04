@@ -98,7 +98,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        tools:ignore="HardcodedText" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/googleSignInButton"

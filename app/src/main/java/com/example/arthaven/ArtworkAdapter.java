@@ -4,42 +4,53 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-public class ArtworkAdapter extends BaseAdapter {
-    private Context context;
-    private int[] artworkImages;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public ArtworkAdapter(Context context, int[] artworkImages) {
-        this.context = context;
+import com.bumptech.glide.Glide;
+
+import java.util.List;
+
+public class ArtworkAdapter extends RecyclerView.Adapter<ArtworkAdapter.ArtworkViewHolder> {
+
+    private List<Integer> artworkImages;
+
+    public ArtworkAdapter(List<Integer> artworkImages) {
         this.artworkImages = artworkImages;
     }
 
+    @NonNull
     @Override
-    public int getCount() {
-        return artworkImages.length;
+    public ArtworkViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.artwork_item, parent, false);
+        return new ArtworkViewHolder(view);
     }
 
     @Override
-    public Object getItem(int position) {
-        return artworkImages[position];
+    public void onBindViewHolder(@NonNull ArtworkViewHolder holder, int position) {
+        Context context = holder.artworkImageView.getContext();
+        int customWidth = 2000;
+        int customHeight = 2000;
+        Glide.with(context)
+                .load(artworkImages.get(position))
+                .override(customWidth, customHeight) // Set custom width and height
+                .centerCrop() // Maintain aspect ratio while resizing
+                .into(holder.artworkImageView);
     }
 
     @Override
-    public long getItemId(int position) {
-        return position;
+    public int getItemCount() {
+        return artworkImages.size();
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.artwork_item, parent, false);
+    class ArtworkViewHolder extends RecyclerView.ViewHolder {
+        ImageView artworkImageView;
+
+        ArtworkViewHolder(@NonNull View itemView) {
+            super(itemView);
+            artworkImageView = itemView.findViewById(R.id.artworkImageView);
         }
-
-        ImageView artworkImageView = convertView.findViewById(R.id.artworkImageView);
-        artworkImageView.setImageResource(artworkImages[position]);
-
-        return convertView;
     }
 }
