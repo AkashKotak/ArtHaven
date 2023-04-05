@@ -36,7 +36,8 @@
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <activity android:name=".ArtistProfileActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
-
+        <activity android:name=".BuyerProfileActivity" />
+        <activity android:name=".PhotoDescription" />
 
     </application>
 

@@ -10,4 +10,8 @@
     <string name="logo_desc" />
     <string name="email_edittext_description" />
     <string name="google_api_client_id">10310644185-6hdme6aq6himealn731j5ks76mm3nvcc.apps.googleusercontent.com</string>
+    <string-array name="languages">
+        <item>Artist</item>
+        <item>Buyer</item>
+    </string-array>
 </resources>

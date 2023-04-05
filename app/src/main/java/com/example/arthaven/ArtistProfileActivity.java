@@ -1,6 +1,9 @@
 package com.example.arthaven;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,9 +24,9 @@ public class ArtistProfileActivity extends AppCompatActivity {
         setContentView(R.layout.artist_profile);
 
         // Find views by their IDs
-        ImageView profileImageView = findViewById(R.id.profileImageView);
+        ImageView profileImageView = findViewById(R.id.user_profile_image);
 
-        TextView nameTextView = findViewById(R.id.nameTextView);
+        TextView nameTextView = findViewById(R.id.user_name);
 
         // Set profile image using Glide
         Glide.with(this)
@@ -36,7 +39,7 @@ public class ArtistProfileActivity extends AppCompatActivity {
         nameTextView.setText("Amit Samant's Trending Artwork of the Week");
 
         // Set up artwork grid
-        RecyclerView artworkRecyclerView = findViewById(R.id.artworkRecyclerView);
+
         List<Integer> artworkImages = new ArrayList<>();
         artworkImages.add(R.drawable.portfolio_1);
         artworkImages.add(R.drawable.portfolio_2);
@@ -46,7 +49,14 @@ public class ArtistProfileActivity extends AppCompatActivity {
 // Add more images to the list
 
         ArtworkAdapter artworkAdapter = new ArtworkAdapter(artworkImages);
-        artworkRecyclerView.setAdapter(artworkAdapter);
+        Button trendingArtButton = findViewById(R.id.trending_art_button);
+        trendingArtButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ArtistProfileActivity.this, PhotoDescription.class);
+                startActivity(intent);
+            }
 
+        });
     }
 }
