@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/arthavenbg">
+    style="@android:style/Widget.Holo.Light.ScrollView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/arthavenbg"
+    >
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
         <ImageView
             android:id="@+id/product_image"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/portfolio_2" />
+            android:layout_width="wrap_content"
+            android:layout_height="500dp"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/product_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_weight="@dimen/material_emphasis_disabled"
             android:text="Product Title"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -33,14 +35,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="$99.99"
+            android:textColor="@android:color/holo_red_dark"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/holo_red_dark" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/product_description_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="409dp"
+            android:layout_height="42dp"
             android:layout_marginTop="24dp"
             android:text="Product Description"
             android:textSize="18sp"
@@ -48,12 +50,12 @@
 
         <TextView
             android:id="@+id/product_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="472dp"
+            android:layout_height="78dp"
             android:layout_marginTop="8dp"
+            android:lineSpacingExtra="4sp"
             android:text="Product description goes here..."
-            android:textSize="16sp"
-            android:lineSpacingExtra="4sp" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/add_to_cart_button"
@@ -61,11 +63,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:background="@color/black"
+            android:paddingVertical="12dp"
             android:text="Add to Cart"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:paddingVertical="12dp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 

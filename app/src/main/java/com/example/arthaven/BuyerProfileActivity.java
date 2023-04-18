@@ -42,5 +42,12 @@ public class BuyerProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+    }
+
+    public void onImageClick(View view) {
+        // Add your desired click action here, for example:
+        Intent intent = new Intent(BuyerProfileActivity.this, PhotoDescription.class);
+        startActivity(intent);
     }
 }

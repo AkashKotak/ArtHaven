@@ -4,12 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
@@ -34,19 +33,17 @@ public class ArtistProfileActivity extends AppCompatActivity {
                 .override(100, 100) // Adjust these values according to your needs
                 .into(profileImageView);
 
-
         // Set name
         nameTextView.setText("Amit Samant's Trending Artwork of the Week");
 
         // Set up artwork grid
-
         List<Integer> artworkImages = new ArrayList<>();
         artworkImages.add(R.drawable.portfolio_1);
         artworkImages.add(R.drawable.portfolio_2);
         artworkImages.add(R.drawable.portfolio_3);
         artworkImages.add(R.drawable.portfolio_4);
         artworkImages.add(R.drawable.portfolio_6);
-// Add more images to the list
+        // Add more images to the list
 
         ArtworkAdapter artworkAdapter = new ArtworkAdapter(artworkImages);
         Button trendingArtButton = findViewById(R.id.trending_art_button);
@@ -56,7 +53,14 @@ public class ArtistProfileActivity extends AppCompatActivity {
                 Intent intent = new Intent(ArtistProfileActivity.this, PhotoDescription.class);
                 startActivity(intent);
             }
-
         });
+    }
+
+    // Add the onImageClick method
+    public void onImageClick(View view) {
+        // Add your desired click action here, for example:
+        Intent intent = new Intent(ArtistProfileActivity.this, PhotoDescription.class);
+        startActivity(intent);
+
     }
 }

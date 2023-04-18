@@ -1,6 +1,7 @@
 package com.example.arthaven;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ArtworkAdapter extends RecyclerView.Adapter<ArtworkAdapter.ArtworkViewHolder> {
@@ -38,6 +40,17 @@ public class ArtworkAdapter extends RecyclerView.Adapter<ArtworkAdapter.ArtworkV
                 .override(customWidth, customHeight) // Set custom width and height
                 .centerCrop() // Maintain aspect ratio while resizing
                 .into(holder.artworkImageView);
+
+        // Set OnClickListener on the image to send the image resource ID to the PhotoDescription activity
+        holder.artworkImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), PhotoDescription.class);
+                intent.putIntegerArrayListExtra("artwork_images", new ArrayList<>(artworkImages));
+                intent.putExtra("image_position", position);
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

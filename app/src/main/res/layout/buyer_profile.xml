@@ -75,7 +75,10 @@
                     android:layout_margin="2dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/portfolio_1" />
+                    android:src="@drawable/portfolio_1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onImageClick"/>
 
                 <ImageView
                     android:id="@+id/image_2"
@@ -85,7 +88,10 @@
                     android:layout_margin="2dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/portfolio_2" />
+                    android:src="@drawable/portfolio_2"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onImageClick"/>
                 <ImageView
                     android:id="@+id/image_3"
                     android:layout_width="0dp"
@@ -94,7 +100,10 @@
                     android:layout_margin="2dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/portfolio_3" />
+                    android:src="@drawable/portfolio_3"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onImageClick"/>
                 <ImageView
                     android:id="@+id/image_4"
                     android:layout_width="0dp"
@@ -103,7 +112,10 @@
                     android:layout_margin="2dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/portfolio_4" />
+                    android:src="@drawable/portfolio_4"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onImageClick"/>
                 <ImageView
                     android:id="@+id/image_5"
                     android:layout_width="0dp"
@@ -112,7 +124,10 @@
                     android:layout_margin="2dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/portfolio_5" />
+                    android:src="@drawable/portfolio_5"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onImageClick"/>
                 <ImageView
                     android:id="@+id/image_6"
                     android:layout_width="0dp"
@@ -121,7 +136,58 @@
                     android:layout_margin="2dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/portfolio_6" />
+                    android:src="@drawable/portfolio_6"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onImageClick"/>
+                <ImageView
+                    android:id="@+id/image_10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/portfolio_6"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onImageClick"/>
+                <ImageView
+                    android:id="@+id/image_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/portfolio_6"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onImageClick"/>
+                <ImageView
+                    android:id="@+id/image_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/portfolio_4"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onImageClick"/>
+                <ImageView
+                    android:id="@+id/image_9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/portfolio_3"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onImageClick"/>
 
                 <!-- Add more ImageView elements for additional images -->
                 <!-- ... -->
