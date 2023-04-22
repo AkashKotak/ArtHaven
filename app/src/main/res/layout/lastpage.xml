@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="210dp"
+        android:layout_height="78dp"
+        android:text="Go Back to main page"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="445dp"
+        tools:ignore="MissingConstraints"
+        tools:context=".lastpage"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="230dp"
+        android:layout_height="108dp"
+        android:text="Thank You for shopping with us"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="105dp"
+        tools:ignore="MissingConstraints"
+        android:textSize="30sp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

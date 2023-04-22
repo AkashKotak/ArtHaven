@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,52 +17,50 @@ import java.util.List;
 
 public class PhotoDescription extends AppCompatActivity {
 
-    private ImageView productImage;
-    private TextView productTitle;
-    private TextView productPrice;
-    private TextView productDescription;
-    private Button addToCartButton;
-
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.photodescription);
 
-        // Get references to UI elements
-        productImage = findViewById(R.id.product_image);
-        productTitle = findViewById(R.id.product_title);
-        productPrice = findViewById(R.id.product_price);
-        TextView productDescriptionTitle = findViewById(R.id.product_description_title);
-        productDescription = findViewById(R.id.product_description);
-        addToCartButton = findViewById(R.id.add_to_cart_button);
+        Button trendingArtButton = findViewById(R.id.add_to_cart_button);
+        trendingArtButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PhotoDescription.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        // Get the image position and the artwork images list from the Intent extras
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            int imagePosition = extras.getInt("image_position");
-            List<Integer> artworkImages = extras.getIntegerArrayList("artwork_images");
+        Intent intent = getIntent();
+        if (intent != null) {
+            Integer imageId = intent.getIntExtra("imageId", -1);
+            String title = intent.getStringExtra("title");
+            String price = intent.getStringExtra("price");
+            String description = intent.getStringExtra("description");
 
-            int imageResId = artworkImages.get(imagePosition);
+            if (imageId != -1 && title != null && price != null && description != null) {
+                ImageView imageView = findViewById(R.id.product_image);
+                imageView.setImageResource(imageId);
 
-            // Set the image resource to the ImageView
-            Glide.with(this)
-                    .load(imageResId)
-                    .centerCrop()
-                    .into(productImage);
+                TextView titleView = findViewById(R.id.product_title);
+                titleView.setText(title);
 
-            // Set values for UI elements
-            productTitle.setText("Product Title");
-            productPrice.setText("$99.99");
-            productDescriptionTitle.setText("Product Description");
-            productDescription.setText("Product description goes here...");
+                TextView priceView = findViewById(R.id.product_price );
+                priceView.setText(price);
 
-            // Set click listener for Add to Cart button
-            addToCartButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // TODO: Add code to handle button click
-                }
-            });
+                TextView descriptionView = findViewById(R.id.product_description);
+                descriptionView.setText(description);
+
+
+            } else {
+                Toast.makeText(this, "Error: Artwork details not available", Toast.LENGTH_SHORT).show();
+                finish(); // Close the activity
+            }
+        } else {
+            Toast.makeText(this, "Error: No artwork data received", Toast.LENGTH_SHORT).show();
+            finish(); // Close the activity
         }
+
     }
+
 }

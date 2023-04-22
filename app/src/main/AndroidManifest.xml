@@ -38,6 +38,10 @@
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <activity android:name=".BuyerProfileActivity" />
         <activity android:name=".PhotoDescription" />
+        <activity android:name=".CartActivity"/>
+        <activity android:name=".ArtworkGridActivity"/>
+        <activity android:name=".PaymentActivity"/>
+        <activity android:name=".lastpage"/>
 
     </application>
 

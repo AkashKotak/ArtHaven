@@ -1,15 +1,37 @@
 package com.example.arthaven;
 
 public class Artwork {
+    private int viewId;
+    private int imageId;
+    private String title;
+    private String price;
+    private String description;
 
-    private int mImageResource;
-
-    public Artwork(int imageResource) {
-        mImageResource = imageResource;
+    public Artwork(int viewId, int imageId, String title, String price, String description) {
+        this.viewId = viewId;
+        this.imageId = imageId;
+        this.title = title;
+        this.price = price;
+        this.description = description;
     }
 
-    public int getImageResource() {
-        return mImageResource;
+    public int getViewId() {
+        return viewId;
     }
 
+    public int getImageId() {
+        return imageId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }
