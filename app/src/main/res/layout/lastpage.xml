@@ -3,25 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/lbg">
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="210dp"
-        android:layout_height="78dp"
-        android:text="Go Back to main page"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="445dp"
-        tools:ignore="MissingConstraints"
-        tools:context=".lastpage"/>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="230dp"
-        android:layout_height="108dp"
-        android:text="Thank You for shopping with us"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="105dp"
-        tools:ignore="MissingConstraints"
-        android:textSize="30sp"/>
+        android:layout_width="302dp"
+        android:layout_height="131dp"
+        android:backgroundTint="#615A6E"
+        android:text="Lets Check other artist Work"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="italic|bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context=".lastpage"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

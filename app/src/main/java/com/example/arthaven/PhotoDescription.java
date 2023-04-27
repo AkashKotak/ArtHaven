@@ -8,12 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.bumptech.glide.Glide;
-
-import java.util.List;
 
 public class PhotoDescription extends AppCompatActivity {
 
@@ -22,11 +17,25 @@ public class PhotoDescription extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.photodescription);
 
-        Button trendingArtButton = findViewById(R.id.add_to_cart_button);
-        trendingArtButton.setOnClickListener(new View.OnClickListener() {
+        Button addToCartButton = findViewById(R.id.add_to_cart_button);
+        addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PhotoDescription.this, CartActivity.class);
+
+                // Get the selected artwork data from the intent extras
+                Integer imageId = getIntent().getIntExtra("imageId", -1);
+                String title = getIntent().getStringExtra("title");
+                String price = getIntent().getStringExtra("price");
+                String description = getIntent().getStringExtra("description");
+
+                // Create a new Artwork object with the selected artwork data
+                Artwork artwork = new Artwork(imageId, title, price, description);
+
+                // Add the selected artwork to the Cart singleton
+                Cart cart = Cart.getInstance();
+                cart.addArtwork(artwork);
+
                 startActivity(intent);
             }
         });
@@ -45,12 +54,11 @@ public class PhotoDescription extends AppCompatActivity {
                 TextView titleView = findViewById(R.id.product_title);
                 titleView.setText(title);
 
-                TextView priceView = findViewById(R.id.product_price );
+                TextView priceView = findViewById(R.id.product_price);
                 priceView.setText(price);
 
                 TextView descriptionView = findViewById(R.id.product_description);
                 descriptionView.setText(description);
-
 
             } else {
                 Toast.makeText(this, "Error: Artwork details not available", Toast.LENGTH_SHORT).show();
@@ -60,7 +68,5 @@ public class PhotoDescription extends AppCompatActivity {
             Toast.makeText(this, "Error: No artwork data received", Toast.LENGTH_SHORT).show();
             finish(); // Close the activity
         }
-
     }
-
 }

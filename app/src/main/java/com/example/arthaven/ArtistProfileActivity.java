@@ -27,15 +27,19 @@ public class ArtistProfileActivity extends AppCompatActivity {
 
         // Initialize your artworks ArrayList with your Artwork objects
         artworks = new ArrayList<>();
+
+
+        // Initialize your artworks ArrayList with your Artwork objects
         artworks.add(new Artwork(R.id.image_1, R.drawable.portfolio_1, "Artwork 1", "$99.99", "Artwork 1 description"));
         artworks.add(new Artwork(R.id.image_2, R.drawable.portfolio_2, "Artwork 2", "$79.99", "Artwork 2 description"));
         artworks.add(new Artwork(R.id.image_3, R.drawable.portfolio_3, "Artwork 3", "$79.99", "Artwork 3 description"));
-        artworks.add(new Artwork(R.id.image_4, R.drawable.portfolio_4, "Artwork 1", "$99.99", "Artwork 1 description"));
-        artworks.add(new Artwork(R.id.image_5, R.drawable.portfolio_5, "Artwork 2", "$79.99", "Artwork 2 description"));
-        artworks.add(new Artwork(R.id.image_6, R.drawable.portfolio_6, "Artwork 3", "$79.99", "Artwork 3 description"));
-        artworks.add(new Artwork(R.id.image_7, R.drawable.portfolio_6, "Artwork 1", "$99.99", "Artwork 1 description"));
-        artworks.add(new Artwork(R.id.image_8, R.drawable.portfolio_4, "Artwork 2", "$79.99", "Artwork 2 description"));
-        artworks.add(new Artwork(R.id.image_9, R.drawable.portfolio_3, "Artwork 3", "$79.99", "Artwork 3 description"));
+        artworks.add(new Artwork(R.id.image_4, R.drawable.portfolio_4, "Artwork 4", "$99.99", "Artwork 4 description"));
+        artworks.add(new Artwork(R.id.image_5, R.drawable.portfolio_5, "Artwork 5", "$79.99", "Artwork 5 description"));
+        artworks.add(new Artwork(R.id.image_6, R.drawable.portfolio_6, "Artwork 6", "$79.99", "Artwork 6 description"));
+        artworks.add(new Artwork(R.id.image_7, R.drawable.portfolio_2, "Artwork 7", "$99.99", "Artwork 7 description"));
+        artworks.add(new Artwork(R.id.image_8, R.drawable.portfolio_6, "Artwork 8", "$79.99", "Artwork 8 description"));
+        artworks.add(new Artwork(R.id.image_9, R.drawable.portfolio_4, "Artwork 9", "$79.99", "Artwork 9 description"));
+
 
         displayArtworks();
 
@@ -68,8 +72,15 @@ public class ArtistProfileActivity extends AppCompatActivity {
             ImageView imageView = findViewById(imageViews[i]);
             imageView.setImageResource(artworks.get(i).getImageId());
             imageView.setId(artworks.get(i).getViewId());
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onImageClick(v);
+                }
+            });
         }
     }
+
 
     public void onMostLikedImagesClick(View view) {
         Intent intent = new Intent(ArtistProfileActivity.this, ArtworkGridActivity.class);
